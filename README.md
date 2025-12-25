@@ -2,80 +2,56 @@
 Predictive Modeling of Airline Ticket Price Using DL
 ### Name : SAKTHIVEL S
 
-## Predictive Modeling of Airline Ticket Prices Using Deep Learning
-### Table of Contents
+# Flight Fare Prediction - a Classic Time Series Project
+* Flight fare prediction is a classical problem of time series forecasting that finds trends in past observations to outline the future
+* Many popular flight booking websites today, including Google Flights, showcase important insights on:
+  * Current fair status: high, low or fair
+  * Past fare trends, upcoming future trends and 
+  * Helps decide the right time to book a flight ticket.
+* In this project, we are going to build a Python Flight Fare Prediction App, that returns the fare prediction for a given set of travel details, like:  departure date, arrival date, departure city, arrival city, stoppages, and the airline carrier.
 
-Project Overview
-Objectives
-Dataset
-Features
-Methodology
-Model Architecture
-Installation
-Usage
-Results
-Future Scope
-References
+## App Functionality
+![](templates/App_Functionality.gif)
 
-## Project Overview
+## Steps to run Flight Fare App - on Windows
 
-Airline ticket prices fluctuate dynamically due to factors such as demand, seasonality, route, airline, and market competition. This project leverages deep learning techniques to predict airline ticket prices based on historical data and relevant features. By accurately forecasting ticket prices, travelers and agencies can make informed purchase decisions, and airlines can optimize revenue management strategies.
+* Prerequisites: [Python 3.9](https://www.python.org/downloads/) (ensure Python is added to [PATH](https://medium.com/co-learning-lounge/how-to-download-install-python-on-windows-2021-44a707994013)) + [Git](https://git-scm.com/downloads) Client 
+* Open GIT CMD >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
-## Objectives
-1.Collect and preprocess historical airline fare data.
-2.Identify key factors affecting ticket prices.
-3.Develop a deep learning model (LSTM, MLP, or CNN) for price prediction.
-4.Compare deep learning model performance with baseline machine learning models.
-5.Provide an interactive interface or dashboard for visualizing predictions.
-6.Evaluate the system using metrics such as MAE, RMSE, and MAPE.
+      git clone https://github.com/skillcate/flight-price-prediction.git  
+* Open Windows Powershell >> navigate to new working directory (cloned repo folder)
+* Run Project in Flask (Using PIP + Virtualenv)
+ 
+        pip install virtualenv                  # install virtual environment        
+        virtualenv ENV                          # create virtual environment by the name ENV
+        .\ENV\Scripts\activate                  # activate ENV
+        pip install -r .\requirements.txt       # install project dependencies
+        python app.py                           # run the project
+        deactivate                              # close virtual environment once done
+  
 
-## Dataset
-The dataset contains historical airline fare information including:
+### Steps to run Flight Fare App - on Mac
 
-## Feature	Description
-query_time	Timestamp of the price observation
-origin	Departure airport code
-destination	Arrival airport code
-departure_date	Flight departure date
-return_date	Flight return date (if applicable)
-carrier	Airline operating the flight
-cabin	Cabin class (Economy, Business)
-stops	Number of stops
-price	Ticket fare (target variable)
-days_to_departure	Days between query and departure
-holiday_flag	Indicator for local holidays/events
+* Prerequisites: [Python 3.9](https://www.python.org/downloads/)
+* Open Terminal >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
-## Features
+        git clone https://github.com/skillcate/flight-price-prediction.git  
+* Navigate to project working directory (cloned repo folder)
+* Run Project in Flask (Using PIP + Virtualenv)
 
-Categorical Features: Airline, origin, destination, cabin class
+        pip install virtualenv                  # install virtual environment
+        virtualenv ENV                          # create virtual environment by the name ENV
+        source ENV/bin/activate                 # activate ENV
+        pip install -r requirements.txt         # install project dependencies
+        python app.py                           # run the project
+        deactivate                              # close virtual environment once done
+        
+### Bug / Feature Request
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/skillcate/flight-price-prediction/issues) by including your search query and the expected result.
 
-Numerical Features: Days to departure, price history, rolling statistics
-
-Time Features: Day of week, month, seasonality
-
-External Features (Optional): Holiday/event flags, competitor prices, fuel price index
-
-## Methodology
-
-Data Preprocessing: Handle missing values, encode categorical variables, normalize numerical features.
-
-Feature Engineering: Generate lag features, route embeddings, time features, and rolling statistics.
-
-Model Training: Train deep learning models (LSTM, MLP, CNN) to capture temporal and nonlinear patterns.
-
-Evaluation: Use metrics like MAE, RMSE, and MAPE to compare with baseline regression models.
-
-Deployment (Optional): Create a dashboard or API to predict ticket prices in real time.
-
-## Model Architecture
-
-Embeddings: For categorical variables (carrier, origin, destination).
-
-LSTM Layer: To capture temporal dependencies in historical price data.
-
-Dense Layers: For numerical and embedded features.
-
-Output: Predicts ticket price (single-step or multi-horizon).
+### Important links:
+* [Dataset](https://www.kaggle.com/datasets/nikhilmittal/flight-fare-prediction-mh)
+* [Project Folder on Drive](https://drive.google.com/drive/folders/1vnapi048bbmoXyoxOLLX6W_tA6a1uQ9w?usp=sharing)
 
 Loss Function: Huber Loss (robust to outliers)
 Metrics: MAE, RMSE
